@@ -55,7 +55,7 @@ img {
 .large {
   font-size: 3rem;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .lead {
@@ -360,7 +360,7 @@ button {
 /* Profiles Page */
 .profile {
   display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
+  grid-template-columns: 1fr 4fr 1fr;
   align-items: center;
   grid-gap: 2rem;
   padding: 1rem;
@@ -379,7 +379,7 @@ button {
   grid-gap: 1rem;
 }
 
-.profile-top {
+.profile-about {
   grid-area: top;
   display: flex;
   flex-direction: column;
@@ -388,77 +388,47 @@ button {
   text-align: center;
 }
 
-.profile-top img {
+.profile-about img {
   width: 250px;
 }
 
-.profile-top .icons a {
+.profile-about .icons a {
   color: #fff;
   margin: 0 0.3rem;
 }
 
-.profile-top .icons a:hover {
+.profile-about .icons a:hover {
   color: var(--dark-color);
 }
 
-.profile-about {
-  grid-area: about;
-  text-align: center;
+.profile-places {
+  grid-area: place;
 }
 
-.profile-about .skills {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.profile-products {
+  grid-area: products;
 }
 
-.profile-exp {
-  grid-area: exp;
-}
-
-.profile-edu {
-  grid-area: edu;
-}
-
-.profile-exp h2,
-.profile-edu h2 {
+.profile-places h2,
+.profile-products h2 {
   margin-bottom: 1rem;
 }
 
-.profile-exp > div,
-.profile-edu > div {
+.profile-places > div,
+.profile-products > div {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: #ccc 1px dotted;
 }
 
-.profile-exp > div:last-child,
-.profile-edu > div:last-child {
+.profile-places > div:last-child,
+.profile-products > div:last-child {
   border: 0;
 }
 
-.profile-exp p,
-.profile-edu p {
+.profile-places p,
+.profile-products p {
   margin: 0.5rem 0;
-}
-
-.profile-github {
-  grid-area: github;
-}
-
-.profile-github .repo {
-  display: flex;
-}
-
-.profile-github .repo > div:first-child {
-  flex: 7;
-  flex-basis: 70%;
-}
-
-.profile-github > div:last-child {
-  flex: 3;
-  flex-basis: 20%;
 }
 
 /* Posts Page */
@@ -550,7 +520,7 @@ button {
 
   /* Profile Page */
 
-  .profile-top img,
+  .profile-about img,
   .profile img {
     width: 200px;
     margin: auto;

@@ -10,6 +10,8 @@ import PrivateRoute from "./components/routing/PrivateRoute";
 import ProfileForm from "./components/profile-forms/ProfileForm";
 import AddFavoritePlace from "./components/profile-forms/AddFavoritePlace";
 import AddFavoriteProduct from "./components/profile-forms/AddFavoriteProduct";
+import Profiles from "./components/profiles/Profiles";
+import Profile from "./components/profile/Profile";
 import "./App.css";
 
 // Redux
@@ -55,6 +57,14 @@ const App = () => {
           <Route
             path="/add-favorite-products"
             element={<PrivateRoute component={AddFavoriteProduct} />}
+          />
+          <Route
+            path="/profiles"
+            element={<PrivateRoute component={Profiles} />}
+          />
+          <Route
+            path="/profile/:id"
+            element={<PrivateRoute component={Profile} />}
           />
         </Routes>
       </Router>
