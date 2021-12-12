@@ -15,6 +15,34 @@ const ProfileSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  favoritePlaces: [
+    {
+      name: {
+        type: String,
+        required: true,
+      },
+      address: {
+        type: String,
+      },
+      description: {
+        type: String,
+      },
+    },
+  ],
+  favoriteProducts: [
+    {
+      name: {
+        type: String,
+        required: true,
+      },
+      link: {
+        type: String,
+      },
+      description: {
+        type: String,
+      },
+    },
+  ],
 });
 
 module.exports = mongoose.model("profile", ProfileSchema);

@@ -1,4 +1,4 @@
 {
-  "mongoURL": "mongodb+srv://truongvihao24:kh1JzUJNSbBXWEGt@cluster0.wdhvt.mongodb.net/HaosReviewSite?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://truongvihao24:kh1JzUJNSbBXWEGt@cluster0.wdhvt.mongodb.net/HaosReviewSite?retryWrites=true&w=majority",
   "jwtSecret": "secrettoken"
 }

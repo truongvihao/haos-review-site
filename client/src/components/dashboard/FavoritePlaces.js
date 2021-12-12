@@ -1,0 +1,46 @@
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { deleteFavoritePlace } from "../../actions/profile";
+
+const FavoritePlaces = ({ favoritePlaces, deleteFavoritePlace }) => {
+  const favPlaces = favoritePlaces.map((place) => (
+    <tr key={place._id}>
+      <td>{place.name}</td>
+      <td className="hide-sm">{place.address}</td>
+      <td className="hide-sm">{place.description}</td>
+      <td>
+        <button
+          onClick={() => deleteFavoritePlace(place._id)}
+          className="btn btn-danger"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  ));
+
+  return (
+    <Fragment>
+      <h2 className="my-2">Favorite Places</h2>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th className="hide-sm">Address</th>
+            <th className="hide-sm">Description</th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>{favPlaces}</tbody>
+      </table>
+    </Fragment>
+  );
+};
+
+FavoritePlaces.propTypes = {
+  favoritePlaces: PropTypes.array.isRequired,
+  deleteFavoritePlace: PropTypes.func.isRequired,
+};
+
+export default connect(null, { deleteFavoritePlace })(FavoritePlaces);
