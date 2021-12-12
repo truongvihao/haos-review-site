@@ -214,6 +214,11 @@ img {
   border: #ccc solid 1px;
 }
 
+.btn-primary-outline {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
 .btn:hover {
   opacity: 0.8;
 }

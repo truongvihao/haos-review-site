@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { deleteFavoriteProduct } from "../../actions/profile";
+import { Link } from "react-router-dom";
 
 const FavoriteProducts = ({ favoriteProducts, deleteFavoriteProduct }) => {
   const favProducts = favoriteProducts.map((prod) => (
@@ -12,7 +13,7 @@ const FavoriteProducts = ({ favoriteProducts, deleteFavoriteProduct }) => {
       <td>
         <button
           onClick={() => deleteFavoriteProduct(prod._id)}
-          className="btn btn-danger"
+          className="btn btn-primary-outline"
         >
           Delete
         </button>
@@ -22,8 +23,10 @@ const FavoriteProducts = ({ favoriteProducts, deleteFavoriteProduct }) => {
 
   return (
     <Fragment>
-      <h2 className="my-2">Favorite Products</h2>
-      <table className="table">
+      <h2 className="my-2">
+        <i class="fas fa-archive"></i> Favorite Products
+      </h2>
+      <table className="table my-2">
         <thead>
           <tr>
             <th>Name</th>
@@ -34,6 +37,9 @@ const FavoriteProducts = ({ favoriteProducts, deleteFavoriteProduct }) => {
         </thead>
         <tbody>{favProducts}</tbody>
       </table>
+      <Link to="/add-favorite-products" className="btn btn-light">
+        Add Product
+      </Link>
     </Fragment>
   );
 };
