@@ -8,11 +8,11 @@ const PostForm = ({ addPost }) => {
 
   return (
     <div className="post-form">
-      <div className="bg-primary p">
-        <h3>Say Something...</h3>
+      <div className="p">
+        <h3>Start a new review</h3>
       </div>
       <form
-        className="form my-1"
+        className="form"
         onSubmit={(e) => {
           e.preventDefault();
           addPost({ text });

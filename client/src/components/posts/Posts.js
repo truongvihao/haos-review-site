@@ -13,7 +13,6 @@ const Posts = ({ getPosts, post: { posts } }) => {
   return (
     <section className="container">
       <h1 className="large text-primary">Posts</h1>
-      <p className="lead">Welcome to the community</p>
       <PostForm />
       <div className="posts">
         {posts.map((post) => (
