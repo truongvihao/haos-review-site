@@ -6,13 +6,22 @@ const PostSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users",
   },
-  text: {
+  title: {
     type: String,
     required: true,
   },
-  photo: {
+  overall: {
     type: String,
-    default: "no-photo.jpg",
+  },
+  address: {
+    type: String,
+  },
+  link: {
+    type: String,
+  },
+  text: {
+    type: String,
+    required: true,
   },
   name: {
     type: String,

@@ -9,7 +9,7 @@ import FavoriteProducts from "./FavoriteProducts";
 const Dashboard = ({
   getCurrentProfile,
   auth: { user },
-  profile: { profile, loading },
+  profile: { profile },
 }) => {
   useEffect(() => {
     getCurrentProfile();
@@ -18,12 +18,17 @@ const Dashboard = ({
   return (
     <section className="container">
       <h1 className="large text-primary">Dashboard</h1>
-      <p className="lead">Welcome {user && user.name}</p>
-      <Link to="/edit-profile" className="btn btn-light">
-        Edit Profile
-      </Link>
       {profile !== null ? (
         <>
+          <p className="lead">
+            <strong>Location:</strong> {profile.location}
+          </p>
+          <p className="lead">
+            <strong>Bio:</strong> {profile.bio}
+          </p>
+          <Link to="/edit-profile" className="btn btn-light">
+            Edit Profile
+          </Link>
           <FavoritePlaces favoritePlaces={profile.favoritePlaces} />
           <FavoriteProducts favoriteProducts={profile.favoriteProducts} />
         </>

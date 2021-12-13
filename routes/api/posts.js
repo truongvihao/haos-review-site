@@ -7,12 +7,14 @@ const Post = require("../../models/Post");
 const User = require("../../models/User");
 const checkObjectId = require("../../middleware/checkObjectId");
 
-// Create a post
+// Create new post
 router.post(
   "/",
   auth,
+  check("title", "Title is required").notEmpty(),
   check("text", "Text is required").notEmpty(),
   async (req, res) => {
+    console.log(req.body);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -22,6 +24,10 @@ router.post(
       const user = await User.findById(req.user.id).select("-password");
 
       const newPost = new Post({
+        title: req.body.title,
+        overall: req.body.overall,
+        link: req.body.link,
+        address: req.body.address,
         text: req.body.text,
         name: user.name,
         avatar: user.avatar,

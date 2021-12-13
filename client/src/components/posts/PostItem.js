@@ -10,7 +10,20 @@ const PostItem = ({
   removeLike,
   deletePost,
   auth,
-  post: { _id, text, name, avatar, user, likes, comments, date },
+  post: {
+    _id,
+    title,
+    overall,
+    link,
+    address,
+    text,
+    name,
+    avatar,
+    user,
+    likes,
+    comments,
+    date,
+  },
   showActions,
 }) => (
   <div className="post bg-white p-1 my-1">
@@ -21,7 +34,22 @@ const PostItem = ({
       </Link>
     </div>
     <div>
-      <p className="my-1">{text}</p>
+      <p>
+        <strong>Title:</strong> {title}
+      </p>
+      <p>
+        <strong>Overall:</strong> {overall}
+      </p>
+      <p>
+        <strong>Link:</strong> {link}
+      </p>
+      <p>
+        <strong>Address:</strong> {address}
+      </p>
+      <p>
+        <strong>Detail:</strong>
+      </p>
+      <p>{text}</p>
       <p className="post-date">Posted on {formatDate(date)}</p>
 
       {showActions && (
