@@ -12,7 +12,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   return (
     <section className="container">
       {loading ? (
-        <></>
+        <div>loading</div>
       ) : (
         <Fragment>
           <h1 className="large text-primary">People</h1>
