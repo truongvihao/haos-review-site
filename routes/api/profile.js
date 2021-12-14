@@ -110,12 +110,12 @@ router.put(
 );
 
 // Delete profile favorite place
-router.delete("/favorite-places/:fav_id", auth, async (req, res) => {
+router.delete("/favorite-places/:_id", auth, async (req, res) => {
   try {
     const foundProfile = await Profile.findOne({ user: req.user.id });
 
     foundProfile.favoritePlaces = foundProfile.favoritePlaces.filter(
-      (fav) => fav._id.toString() !== req.params.fav_id
+      (fav) => fav._id.toString() !== req.params._id
     );
 
     await foundProfile.save();
@@ -153,12 +153,12 @@ router.put(
 );
 
 // Delete profile favorite product
-router.delete("/favorite-products/:fav_id", auth, async (req, res) => {
+router.delete("/favorite-products/:_id", auth, async (req, res) => {
   try {
     const foundProfile = await Profile.findOne({ user: req.user.id });
 
     foundProfile.favoriteProducts = foundProfile.favoriteProducts.filter(
-      (fav) => fav._id.toString() !== req.params.fav_id
+      (fav) => fav._id.toString() !== req.params._id
     );
 
     await foundProfile.save();

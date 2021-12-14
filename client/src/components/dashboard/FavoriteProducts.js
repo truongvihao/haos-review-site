@@ -24,7 +24,7 @@ const FavoriteProducts = ({ favoriteProducts, deleteFavoriteProduct }) => {
   return (
     <Fragment>
       <h2 className="my-2">
-        <i class="fas fa-archive"></i> Favorite Products
+        <i className="fas fa-archive"></i> Favorite Products
       </h2>
       <table className="table my-2">
         <thead>

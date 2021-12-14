@@ -46,10 +46,7 @@ const Profile = ({ getProfileById, profile: { profile }, auth }) => {
               {profile.favoriteProducts.length > 0 ? (
                 <Fragment>
                   {profile.favoriteProducts.map((prod) => (
-                    <ProfileFavoriteProducts
-                      key={prod._id}
-                      favoriteProducts={prod}
-                    />
+                    <ProfileFavoriteProducts key={prod._id} prod={prod} />
                   ))}
                 </Fragment>
               ) : (

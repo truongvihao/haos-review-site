@@ -24,7 +24,7 @@ const FavoritePlaces = ({ favoritePlaces, deleteFavoritePlace }) => {
   return (
     <Fragment>
       <h2 className="my-2">
-        <i class="fas fa-map-marked-alt"></i> Favorite Places
+        <i className="fas fa-map-marked-alt"></i> Favorite Places
       </h2>
       <table className="table my-2">
         <thead>
